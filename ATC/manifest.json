@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "UM Ad Compliance Tool",
+  "version": "3.0",
+  "description": "UM Ad Compliance Tool",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "webNavigation",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://adsmanager.facebook.com/*",
+    "https://ads.google.com/aw/campaigns/new/*",
+    "https://www.linkedin.com/campaignmanager/*",
+    "https://act-api.vercel.app/"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://adsmanager.facebook.com/*",
+        "https://ads.google.com/*",
+        "https://www.linkedin.com/campaignmanager/*",
+        "https://act-api.vercel.app/"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/um.png"
+    }
+  },
+  "icons": {
+    "16": "images/um.png"
+  }
+}

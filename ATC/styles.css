@@ -1,0 +1,107 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 320px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.logo {
+    max-width: 50px;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    width: 100%;
+    text-align: left;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-color: #ed1d24;
+    outline: none;
+}
+
+button {
+    background-color: #ed1d24;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px; /* Ensures button height matches input height */
+}
+
+button:hover {
+    background-color: #a71116;
+}
+
+button .spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    animation: spin 1s linear infinite;
+}
+
+button.loading .spinner {
+    display: block;
+}
+
+button.loading span {
+    visibility: hidden;
+}
+
+.error-message {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+}

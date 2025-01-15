@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .back-button {
+        position: fixed;
+        top: 30px;
+        left: 15px;
+        background: none;
+        cursor: pointer;
+        color: red;
+        font-size: 24px;
+        display: none;
+        /* Initially hidden */
+      }
+    </style>
+  </head>
+  <script src="content.js"></script>
+
+  <body>
+    <div class="container">
+      <svg
+        id="backButton"
+        class="back-button"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        style="position: fixed; top: 30px; left: 15px"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+      <img
+        src="https://www.umww.com/wp-content/uploads/2017/11/um-logo-transparent.png"
+        alt="UM Worldwide Logo"
+        class="logo"
+      />
+      <form id="loginForm" class="form">
+        <label for="mail">Email:</label>
+        <input type="email" id="mail" name="mail" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <div id="errorMessage" class="error-message"></div>
+        <!-- Error message container -->
+
+        <button type="submit" id="loginButton">
+          <span>Submit</span>
+          <div class="spinner"></div>
+        </button>
+      </form>
+      <div id="selectionForm" style="display: none">
+        <button id="selectAccountButton">Select Account</button>
+        <button id="selectCampaignButton">Select Campaign</button>
+      </div>
+      <form id="accountForm" class="form" style="display: none">
+        <label for="accountInput">Account:</label>
+        <input
+          type="text"
+          id="accountInput"
+          list="accountsDatalist"
+          name="account"
+        />
+        <datalist id="accountsDatalist"></datalist>
+        <button type="button" id="accountSubmitButton">Submit Account</button>
+        <button type="button" id="accountlogout">Log Out</button>
+        <div id="accountSubmittedMessage" style="display: none">
+          Account Submitted:
+        </div>
+      </form>
+      <form id="campaignForm" class="form" style="display: none">
+        <label for="campaignInput">Campaign:</label>
+        <input
+          type="text"
+          id="campaignInput"
+          list="campaignsDatalist"
+          name="campaign"
+        />
+        <datalist id="campaignsDatalist"></datalist>
+        <button type="button" id="campaignSubmitButton">Submit Campaign</button>
+        <button type="button" id="campaignlogout">Log Out</button>
+        <div id="campaignSubmittedMessage" style="display: none">
+          Campaign Submitted:
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
